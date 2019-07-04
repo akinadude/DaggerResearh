@@ -1,7 +1,4 @@
 package ru.akinadude.dagger.car
 
-import javax.inject.Inject
-import javax.inject.Singleton
-
-@Singleton
-class Driver @Inject constructor()
+// we don't own this class so we can't annotate it with @Inject
+class Driver
