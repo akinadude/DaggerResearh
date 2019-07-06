@@ -1,8 +1,8 @@
 package ru.akinadude.dagger
 
 import android.app.Application
-import ru.akinadude.dagger.di.AppComponent
-import ru.akinadude.dagger.di.DaggerAppComponent
+import ru.akinadude.dagger.di.component.AppComponent
+import ru.akinadude.dagger.di.component.DaggerAppComponent
 
 class App: Application() {
 

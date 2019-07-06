@@ -1,7 +1,7 @@
 package ru.akinadude.dagger.car
 
 import android.util.Log
-import ru.akinadude.dagger.di.ActivityScope
+import ru.akinadude.dagger.di.scope.ActivityScope
 import javax.inject.Inject
 
 @ActivityScope

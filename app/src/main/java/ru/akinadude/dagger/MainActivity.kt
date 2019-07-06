@@ -3,7 +3,7 @@ package ru.akinadude.dagger
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ru.akinadude.dagger.car.Car
-import ru.akinadude.dagger.di.DaggerActivityComponent
+import ru.akinadude.dagger.di.module.DieselEngineModule
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -29,17 +29,11 @@ class MainActivity : AppCompatActivity() {
         // The solution is custom scopes.
 
         //todo @Scope annotations make sense within a component.
-        //
 
-        val component = DaggerActivityComponent.builder()
-            .horsePower(120)
-            .engineCapacity(1400)
-            .appComponent((application as App).getAppComponent())
-            .build()
-        /*val component = DaggerActivityComponent.builder()
-            .horsePower(150)
-            .engineCapacity(1400)
-            .build()*/
+        // Introducing subcomponents
+
+        val component = (application as App).getAppComponent()
+            .getActivityComponent(DieselEngineModule(120))
         component.inject(this)
 
         car.drive()
